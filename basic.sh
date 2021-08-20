@@ -7,6 +7,7 @@ alias ..="cd .."
 alias mkdir="mkdir -pv"
 alias wget="wget -c"
 alias where="find . -iname $1 2>/dev/null"
+alias testcov="gotest -v ./... -p 1 -count=1 -coverprofile=coverage.out && go tool cover -html=coverage.out"
 
 # OSX-only
 alias fix_sound="sudo kill `ps -ax | grep 'coreaudiod' | grep 'sbin' |awk '{print $1}'`"

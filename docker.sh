@@ -22,5 +22,8 @@ alias dk_down=dkd
 alias dk_rspec="docker-compose exec app bin/rspec"
 alias dk_rubocop="docker-compose exec app bundle exec bin/rubocop -a"
 
-#misc
-alias portainer="docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer"
+alias dkenter="docker-compose run --entrypoint 'bash' app"
+
+# misc
+alias portainer="docker run -d -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer"
+alias dynamodb="docker run -d -p 8000:8000 -it --rm instructure/dynamo-local-admin"
